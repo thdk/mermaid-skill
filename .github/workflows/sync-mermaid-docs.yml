@@ -27,7 +27,7 @@ jobs:
 
       - name: Prepare skill docs directory
         run: |
-          SKILL_DOCS=".claude/skills/mermaid/docs"
+          SKILL_DOCS=".claude/skills/mermaid/references"
 
           rm -rf "$SKILL_DOCS"
           mkdir -p "$SKILL_DOCS"

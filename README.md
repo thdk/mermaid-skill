@@ -1,27 +1,28 @@
 # Mermaid Skill for Claude Code
 
-A Claude Code skill for generating Mermaid diagrams. Supports flowcharts, sequence diagrams, class diagrams, ER diagrams, Gantt charts, and 18 more diagram types.
+A Claude Code skill for generating [Mermaid](https://mermaid.js.org/) diagrams. Supports 23 diagram types including flowcharts, sequence diagrams, class diagrams, ER diagrams, Gantt charts, and more.
 
 ## Installation
 
 Copy the skill folder to your project:
 
 ```bash
-cp -r .claude/skills/mermaid /path/to/your/project/.claude/skills/
+git clone https://github.com/WH-2099/mermaid-skill.git
+cp -r mermaid-skill/.claude/skills/mermaid /path/to/your/project/.claude/skills/
 ```
 
-Or clone and copy:
+Or add as a git submodule:
 
 ```bash
-git clone https://github.com/anthropics/mermaid-skill.git
-cp -r mermaid-skill/.claude/skills/mermaid /path/to/your/project/.claude/skills/
+git submodule add https://github.com/WH-2099/mermaid-skill.git .claude/skills/mermaid-skill
+ln -s mermaid-skill/.claude/skills/mermaid .claude/skills/mermaid
 ```
 
 ## Usage
 
 In Claude Code, use the `/mermaid` command:
 
-```sh
+```
 /mermaid create a flowchart for user login process
 /mermaid draw a sequence diagram for API authentication
 /mermaid ER diagram for an e-commerce database
@@ -29,26 +30,31 @@ In Claude Code, use the `/mermaid` command:
 
 ## Supported Diagrams
 
-- Flowchart
-- Sequence Diagram
-- Class Diagram
-- State Diagram
-- ER Diagram
-- Gantt Chart
-- Pie Chart
-- Mindmap
-- Timeline
-- Git Graph
-- Quadrant Chart
-- Requirement Diagram
-- C4 Diagram
-- Sankey Diagram
-- XY Chart
-- Block Diagram
-- Packet Diagram
-- Kanban
-- Architecture Diagram
-- Radar Chart
-- Treemap
-- User Journey
-- ZenUML
+| Category | Diagram Types |
+|----------|---------------|
+| Flow & Process | Flowchart, State Diagram, User Journey |
+| Structural | Class Diagram, ER Diagram, C4 Diagram, Architecture Diagram |
+| Temporal | Sequence Diagram, Gantt Chart, Timeline, Git Graph |
+| Data Visualization | Pie Chart, XY Chart, Sankey Diagram, Quadrant Chart, Radar Chart, Treemap |
+| Organization | Mindmap, Kanban, Block Diagram, Requirement Diagram |
+| Technical | Packet Diagram, ZenUML |
+
+## Project Structure
+
+```
+.claude/skills/mermaid/
+├── SKILL.md           # Skill definition and instructions
+└── references/        # Mermaid syntax documentation
+    ├── flowchart.md
+    ├── sequenceDiagram.md
+    ├── classDiagram.md
+    └── ...
+```
+
+## Documentation Sync
+
+This skill includes a GitHub Action that automatically syncs documentation from the official [mermaid-js/mermaid](https://github.com/mermaid-js/mermaid) repository weekly.
+
+## License
+
+[MIT](LICENSE)

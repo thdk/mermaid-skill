@@ -1,8 +1,9 @@
 ---
 name: mermaid
 description: Generate Mermaid diagrams from user requirements. Supports flowcharts, sequence diagrams, class diagrams, ER diagrams, Gantt charts, and 18 more diagram types.
-allowed-tools: Read, Write, Edit
-argument-hint: [diagram description or requirements]
+allowed-tools: Read Write Edit
+metadata:
+  argument-hint: "[diagram description or requirements]"
 ---
 
 # Mermaid Diagram Generator
@@ -22,37 +23,37 @@ Select the appropriate diagram type and read the corresponding documentation:
 
 | Type | Documentation | Use Cases |
 | ---- | ------------- | --------- |
-| Flowchart | [flowchart.md](docs/flowchart.md) | Processes, decisions, steps |
-| Sequence Diagram | [sequenceDiagram.md](docs/sequenceDiagram.md) | Interactions, messaging, API calls |
-| Class Diagram | [classDiagram.md](docs/classDiagram.md) | Class structure, inheritance, associations |
-| State Diagram | [stateDiagram.md](docs/stateDiagram.md) | State machines, state transitions |
-| ER Diagram | [entityRelationshipDiagram.md](docs/entityRelationshipDiagram.md) | Database design, entity relationships |
-| Gantt Chart | [gantt.md](docs/gantt.md) | Project planning, timelines |
-| Pie Chart | [pie.md](docs/pie.md) | Proportions, distributions |
-| Mindmap | [mindmap.md](docs/mindmap.md) | Hierarchical structures, knowledge graphs |
-| Timeline | [timeline.md](docs/timeline.md) | Historical events, milestones |
-| Git Graph | [gitgraph.md](docs/gitgraph.md) | Branches, merges, versions |
-| Quadrant Chart | [quadrantChart.md](docs/quadrantChart.md) | Four-quadrant analysis |
-| Requirement Diagram | [requirementDiagram.md](docs/requirementDiagram.md) | Requirements traceability |
-| C4 Diagram | [c4.md](docs/c4.md) | System architecture (C4 model) |
-| Sankey Diagram | [sankey.md](docs/sankey.md) | Flow, conversions |
-| XY Chart | [xyChart.md](docs/xyChart.md) | Line charts, bar charts |
-| Block Diagram | [block.md](docs/block.md) | System components, modules |
-| Packet Diagram | [packet.md](docs/packet.md) | Network protocols, data structures |
-| Kanban | [kanban.md](docs/kanban.md) | Task management, workflows |
-| Architecture Diagram | [architecture.md](docs/architecture.md) | System architecture |
-| Radar Chart | [radar.md](docs/radar.md) | Multi-dimensional comparison |
-| Treemap | [treemap.md](docs/treemap.md) | Hierarchical data visualization |
-| User Journey | [userJourney.md](docs/userJourney.md) | User experience flows |
-| ZenUML | [zenuml.md](docs/zenuml.md) | Sequence diagrams (code style) |
+| Flowchart | [flowchart.md](references/flowchart.md) | Processes, decisions, steps |
+| Sequence Diagram | [sequenceDiagram.md](references/sequenceDiagram.md) | Interactions, messaging, API calls |
+| Class Diagram | [classDiagram.md](references/classDiagram.md) | Class structure, inheritance, associations |
+| State Diagram | [stateDiagram.md](references/stateDiagram.md) | State machines, state transitions |
+| ER Diagram | [entityRelationshipDiagram.md](references/entityRelationshipDiagram.md) | Database design, entity relationships |
+| Gantt Chart | [gantt.md](references/gantt.md) | Project planning, timelines |
+| Pie Chart | [pie.md](references/pie.md) | Proportions, distributions |
+| Mindmap | [mindmap.md](references/mindmap.md) | Hierarchical structures, knowledge graphs |
+| Timeline | [timeline.md](references/timeline.md) | Historical events, milestones |
+| Git Graph | [gitgraph.md](references/gitgraph.md) | Branches, merges, versions |
+| Quadrant Chart | [quadrantChart.md](references/quadrantChart.md) | Four-quadrant analysis |
+| Requirement Diagram | [requirementDiagram.md](references/requirementDiagram.md) | Requirements traceability |
+| C4 Diagram | [c4.md](references/c4.md) | System architecture (C4 model) |
+| Sankey Diagram | [sankey.md](references/sankey.md) | Flow, conversions |
+| XY Chart | [xyChart.md](references/xyChart.md) | Line charts, bar charts |
+| Block Diagram | [block.md](references/block.md) | System components, modules |
+| Packet Diagram | [packet.md](references/packet.md) | Network protocols, data structures |
+| Kanban | [kanban.md](references/kanban.md) | Task management, workflows |
+| Architecture Diagram | [architecture.md](references/architecture.md) | System architecture |
+| Radar Chart | [radar.md](references/radar.md) | Multi-dimensional comparison |
+| Treemap | [treemap.md](references/treemap.md) | Hierarchical data visualization |
+| User Journey | [userJourney.md](references/userJourney.md) | User experience flows |
+| ZenUML | [zenuml.md](references/zenuml.md) | Sequence diagrams (code style) |
 
 ## Configuration & Themes
 
-- [Theming](docs/config-theming.md) - Custom colors and styles
-- [Directives](docs/config-directives.md) - Diagram-level configuration
-- [Layouts](docs/config-layouts.md) - Layout direction and spacing
-- [Configuration](docs/config-configuration.md) - Global settings
-- [Math](docs/config-math.md) - LaTeX math support
+- [Theming](references/config-theming.md) - Custom colors and styles
+- [Directives](references/config-directives.md) - Diagram-level configuration
+- [Layouts](references/config-layouts.md) - Layout direction and spacing
+- [Configuration](references/config-configuration.md) - Global settings
+- [Math](references/config-math.md) - LaTeX math support
 
 ## Output Specification
 

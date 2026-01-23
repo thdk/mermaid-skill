@@ -1,0 +1,49 @@
+name: Sync Mermaid Docs
+
+on:
+  schedule:
+    - cron: "0 0 * * 0"
+  workflow_dispatch:
+
+jobs:
+  sync-docs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout current repository
+        uses: actions/checkout@v6
+
+      - name: Checkout mermaid docs
+        uses: actions/checkout@v6
+        with:
+          repository: mermaid-js/mermaid
+          path: mermaid-source
+          sparse-checkout: |
+            docs/syntax
+            docs/config
+          sparse-checkout-cone-mode: true
+
+      - name: Prepare skill docs directory
+        run: |
+          SKILL_DOCS=".claude/skills/mermaid/docs"
+
+          rm -rf "$SKILL_DOCS"
+          mkdir -p "$SKILL_DOCS"
+
+          find mermaid-source/docs/syntax -maxdepth 1 -name "*.md" -exec cp {} "$SKILL_DOCS/" \;
+
+          for file in configuration.md directives.md layouts.md math.md theming.md tidy-tree.md; do
+            if [ -f "mermaid-source/docs/config/$file" ]; then
+              cp "mermaid-source/docs/config/$file" "$SKILL_DOCS/config-$file"
+            fi
+          done
+
+          rm -rf mermaid-source
+
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: "docs: sync mermaid syntax and config docs"
+          file_pattern: ".claude/skills/mermaid/**"

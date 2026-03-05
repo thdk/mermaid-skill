@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "Generate Mermaid diagrams from user requirements. Supports 23+ diagram types including flowcharts, sequence diagrams, class diagrams, ER diagrams, Gantt charts, and more.",
   "author": {
-    "name": "thdk",
-    "url": "https://github.com/thdk"
+    "name": "wh-2099",
+    "url": "https://github.com/wh-2099"
   },
-  "repository": "https://github.com/thdk/mermaid-skill",
+  "repository": "https://github.com/wh-2099/mermaid-skill",
   "license": "MIT",
   "keywords": ["mermaid", "diagrams", "visualization", "flowchart", "sequence-diagram"]
 }

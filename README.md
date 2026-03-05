@@ -23,7 +23,7 @@ claude plugin install mermaid
 Copy the skill folder directly into your project's `.claude/` directory:
 
 ```bash
-git clone https://github.com/thdk/mermaid-skill.git
+git clone https://github.com/wh-2099/mermaid-skill.git
 cp -r mermaid-skill/skills/mermaid /path/to/your/project/.claude/skills/
 ```
 

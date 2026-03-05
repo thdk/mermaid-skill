@@ -1,31 +1,40 @@
-# Mermaid Skill for Claude Code
+# Mermaid Plugin for Claude Code
 
-A Claude Code skill for generating [Mermaid](https://mermaid.js.org/) diagrams. Supports 23 diagram types including flowcharts, sequence diagrams, class diagrams, ER diagrams, Gantt charts, and more.
+A Claude Code plugin for generating [Mermaid](https://mermaid.js.org/) diagrams. Supports 23 diagram types including flowcharts, sequence diagrams, class diagrams, ER diagrams, Gantt charts, and more.
 
 ## Installation
 
-Copy the skill folder to your project:
+### As a plugin (recommended)
+
+Load the plugin for a single session during development:
 
 ```bash
-git clone https://github.com/WH-2099/mermaid-skill.git
-cp -r mermaid-skill/.claude/skills/mermaid /path/to/your/project/.claude/skills/
+claude --plugin-dir ./mermaid-skill
 ```
 
-Or add as a git submodule:
+To install permanently at user scope:
 
 ```bash
-git submodule add https://github.com/WH-2099/mermaid-skill.git .claude/skills/mermaid-skill
-ln -s mermaid-skill/.claude/skills/mermaid .claude/skills/mermaid
+claude plugin install mermaid
+```
+
+### As a standalone skill (legacy)
+
+Copy the skill folder directly into your project's `.claude/` directory:
+
+```bash
+git clone https://github.com/thdk/mermaid-skill.git
+cp -r mermaid-skill/skills/mermaid /path/to/your/project/.claude/skills/
 ```
 
 ## Usage
 
-In Claude Code, use the `/mermaid` command:
+When installed as a plugin, invoke the skill with:
 
 ```
-/mermaid create a flowchart for user login process
-/mermaid draw a sequence diagram for API authentication
-/mermaid ER diagram for an e-commerce database
+/mermaid:generate create a flowchart for user login process
+/mermaid:generate draw a sequence diagram for API authentication
+/mermaid:generate ER diagram for an e-commerce database
 ```
 
 ## Supported Diagrams
@@ -42,18 +51,22 @@ In Claude Code, use the `/mermaid` command:
 ## Project Structure
 
 ```
-.claude/skills/mermaid/
-├── SKILL.md           # Skill definition and instructions
-└── references/        # Mermaid syntax documentation
-    ├── flowchart.md
-    ├── sequenceDiagram.md
-    ├── classDiagram.md
-    └── ...
+mermaid-skill/
+├── .claude-plugin/
+│   └── plugin.json        # Plugin manifest
+└── skills/
+    └── generate/
+        ├── SKILL.md           # Skill definition and instructions
+        └── references/        # Mermaid syntax documentation
+            ├── flowchart.md
+            ├── sequenceDiagram.md
+            ├── classDiagram.md
+            └── ...
 ```
 
 ## Documentation Sync
 
-This skill includes a GitHub Action that automatically syncs documentation from the official [mermaid-js/mermaid](https://github.com/mermaid-js/mermaid) repository weekly.
+This plugin includes a GitHub Action that automatically syncs documentation from the official [mermaid-js/mermaid](https://github.com/mermaid-js/mermaid) repository weekly.
 
 ## License
 

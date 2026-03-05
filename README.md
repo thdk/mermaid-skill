@@ -4,15 +4,56 @@ A Claude Code plugin for generating [Mermaid](https://mermaid.js.org/) diagrams.
 
 ## Installation
 
-### As a plugin (recommended)
+### Share with a team via `extraKnownMarketplaces` (recommended for teams)
 
-Load the plugin for a single session during development:
+Add this to your project's `.claude/settings.json` to make the plugin discoverable for everyone who works in the repository:
+
+```json
+{
+  "extraKnownMarketplaces": {
+    "mermaid": {
+      "source": {
+        "source": "github",
+        "repo": "thdk/mermaid-skill"
+      }
+    }
+  }
+}
+```
+
+Each team member then installs it once:
+
+```
+/plugin install mermaid@mermaid
+```
+
+To enable it automatically for all team members without a manual install step, also add:
+
+```json
+{
+  "extraKnownMarketplaces": {
+    "mermaid": {
+      "source": {
+        "source": "github",
+        "repo": "thdk/mermaid-skill"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "mermaid@mermaid": true
+  }
+}
+```
+
+### As a plugin (personal use)
+
+Load for a single session:
 
 ```bash
 claude --plugin-dir ./mermaid-skill
 ```
 
-To install permanently at user scope:
+Install permanently at user scope:
 
 ```bash
 claude plugin install mermaid
@@ -24,7 +65,7 @@ Copy the skill folder directly into your project's `.claude/` directory:
 
 ```bash
 git clone https://github.com/thdk/mermaid-skill.git
-cp -r mermaid-skill/skills/mermaid /path/to/your/project/.claude/skills/
+cp -r mermaid-skill/skills/generate /path/to/your/project/.claude/skills/
 ```
 
 ## Usage
@@ -53,7 +94,8 @@ When installed as a plugin, invoke the skill with:
 ```
 mermaid-skill/
 ├── .claude-plugin/
-│   └── plugin.json        # Plugin manifest
+│   ├── plugin.json        # Plugin manifest
+│   └── marketplace.json   # Marketplace catalog (enables extraKnownMarketplaces)
 └── skills/
     └── generate/
         ├── SKILL.md           # Skill definition and instructions

@@ -64,6 +64,7 @@ Generated Mermaid code should:
 3. Have clear structure with proper line breaks and indentation
 4. Use semantic node naming
 5. Include styling when needed to improve visual appearance
+6. Use `<br/>` for line breaks inside node labels — never use `\n`, which renders as literal text
 
 ## Example Output
 

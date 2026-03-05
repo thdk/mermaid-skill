@@ -27,7 +27,7 @@ jobs:
 
       - name: Prepare skill docs directory
         run: |
-          SKILL_DOCS=".claude/skills/mermaid/references"
+          SKILL_DOCS="skills/generate/references"
 
           rm -rf "$SKILL_DOCS"
           mkdir -p "$SKILL_DOCS"
@@ -46,4 +46,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "docs: sync mermaid syntax and config docs"
-          file_pattern: ".claude/skills/mermaid/**"
+          file_pattern: "skills/generate/**"

@@ -1,0 +1,14 @@
+{
+  "name": "mermaid",
+  "owner": {
+    "name": "thdk",
+    "url": "https://github.com/thdk"
+  },
+  "plugins": [
+    {
+      "name": "mermaid",
+      "source": "./",
+      "description": "Generate Mermaid diagrams from user requirements. Supports 23+ diagram types."
+    }
+  ]
+}

@@ -55,6 +55,48 @@ Select the appropriate diagram type and read the corresponding documentation:
 - [Configuration](references/config-configuration.md) - Global settings
 - [Math](references/config-math.md) - LaTeX math support
 
+## Architecture Diagram Best Practices
+
+When generating `architecture-beta` diagrams, apply these layout techniques for complex diagrams:
+
+### Use Junctions for Layout Control
+
+Think of the diagram as an invisible grid. Use `junction` nodes as virtual anchor points on that grid to precisely control where each component is placed. This is especially useful when a direct edge between two services produces unexpected positioning.
+
+Instead of connecting services directly:
+
+```
+lb:R --> L:scim
+lb:R --> L:webapi
+```
+
+Route through junctions to control vertical/horizontal placement:
+
+```
+junction j_lb_r
+lb:R -- L:j_lb_r
+junction j_scim_l
+j_lb_r:T -- B:j_scim_l
+j_scim_l:R --> L:scim
+junction j_webapi_l
+j_lb_r:B -- T:j_webapi_l
+j_webapi_l:R --> L:webapi
+```
+
+Place junctions on all four sides of components to anchor them logically on the grid.
+
+### Use Edges out of Groups for Floating Components
+
+For services that have no logical connection to other nodes (e.g. a deployment tool, a monitoring agent), use a junction combined with the `{group}` modifier to position them without adding a semantically incorrect edge:
+
+```
+junction j_acd_t
+j_algolia_proc_b{group}:B -- T:j_acd_t
+j_acd_t:B -- T:acd
+```
+
+This anchors `acd` below its intended neighbor without implying a real relationship.
+
 ## Output Specification
 
 Generated Mermaid code should:

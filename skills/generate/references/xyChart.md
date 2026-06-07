@@ -123,19 +123,20 @@ xychart
 
 ### AxisConfig
 
-| Parameter     | Description                          | Default value |
-| ------------- | ------------------------------------ | :-----------: |
-| showLabel     | Show axis labels or tick values      |     true      |
-| labelFontSize | Font size of the label to be drawn   |      14       |
-| labelPadding  | Top and Bottom padding of the label  |       5       |
-| showTitle     | Axis title to be shown or not        |     true      |
-| titleFontSize | Axis title font size                 |      16       |
-| titlePadding  | Top and Bottom padding of Axis title |       5       |
-| showTick      | Tick to be shown or not              |     true      |
-| tickLength    | How long the tick will be            |       5       |
-| tickWidth     | How width the tick will be           |       2       |
-| showAxisLine  | Axis line to be shown or not         |     true      |
-| axisLineWidth | Thickness of the axis line           |       2       |
+| Parameter     | Description                                                  | Default value |
+| ------------- | ------------------------------------------------------------ | :-----------: |
+| showLabel     | Show axis labels or tick values                              |     true      |
+| labelFontSize | Font size of the label to be drawn                           |      14       |
+| labelPadding  | Top and Bottom padding of the label                          |       5       |
+| showTitle     | Axis title to be shown or not                                |     true      |
+| titleFontSize | Axis title font size                                         |      16       |
+| titlePadding  | Top and Bottom padding of Axis title                         |       5       |
+| showTick      | Tick to be shown or not                                      |     true      |
+| tickLength    | How long the tick will be                                    |       5       |
+| tickWidth     | How width the tick will be                                   |       2       |
+| showAxisLine  | Axis line to be shown or not                                 |     true      |
+| axisLineWidth | Thickness of the axis line                                   |       2       |
+| labelRotation | Label rotation in degrees (only applicable on bottom X axis) |       0       |
 
 ## Chart Theme Variables
 
